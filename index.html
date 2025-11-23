@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Locação de Imóvel</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0e7ff 0%, #f1f5f9 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+    }
+    h1 {
+      color: #2563eb;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 32px;
+    }
+    section {
+      margin-bottom: 32px;
+      padding: 16px;
+      border-left: 4px solid #2563eb;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #333;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      background: #2563eb;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1e40af;
+    }
+    .rodape {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Formulário de Locação de Imóvel</h1>
+    <div class="subtitle">Preencha todas as informações para darmos continuidade ao processo</div>
+    <form id="form-locacao">
+      <!-- Seção 1 -->
+      <section>
+        <h2>1. Informações Básicas</h2>
+        <label>Nome Completo *</label>
+        <input type="text" name="nomeCompleto" required>
+        <label>Telefone *</label>
+        <input type="tel" name="telefone" required>
+        <label>E-mail *</label>
+        <input type="email" name="email" required>
+      </section>
+      <!-- Seção 2 -->
+      <section>
+        <h2>2. Situação Profissional e Financeira</h2>
+        <label>Ocupação Atual *</label>
+        <input type="text" name="ocupacao" required>
+        <label>Tipo de Vínculo *</label>
+        <select name="tipoVinculo" required>
+          <option value="">Selecione...</option>
+          <option value="Carteira Assinada">Carteira Assinada</option>
+          <option value="Autônoma">Autônoma</option>
+          <option value="Empresária">Empresária</option>
+          <option value="Outro">Outro</option>
+        </select>
+        <label>Tempo no Emprego Atual *</label>
+        <input type="text" name="tempoEmprego" placeholder="Ex: 2 anos e 3 meses" required>
+        <label>Renda Mensal Aproximada *</label>
+        <input type="text" name="rendaMensal" placeholder="Ex: R$ 5.000,00" required>
+      </section>
+      <!-- Seção 3 -->
+      <section>
+        <h2>3. Composição Familiar</h2>
+        <label>Quantas pessoas irão morar? *</label>
+        <input type="number" name="numeroPessoas" required>
+        <label>Crianças</label>
+        <input type="text" name="temCriancas" placeholder="Ex: 2 crianças">
+        <label>Idosos</label>
+        <input type="text" name="temIdosos" placeholder="Ex: 1 idoso">
+        <label>Pets</label>
+        <input type="text" name="temPets" placeholder="Ex: 1 cachorro">
+        <label>Detalhes da Composição Familiar</label>
+        <textarea name="detalhesComposicao" rows="2"></textarea>
+      </section>
+      <!-- Seção 4 -->
+      <section>
+        <h2>4. Histórico de Aluguel</h2>
+        <label>Atualmente mora de aluguel? *</label>
+        <select name="moraAluguel" required>
+          <option value="">Selecione...</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label>Possui referências de antigos proprietários? *</label>
+        <select name="temReferencias" required>
+          <option value="">Selecione...</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label>Já teve problemas anteriores com aluguel?</label>
+        <textarea name="problemaAnterior" rows="2" placeholder="Descreva se houve atrasos, danos ao imóvel, etc."></textarea>
+      </section>
+      <!-- Seção 5 -->
+      <section>
+        <h2>5. Motivo da Mudança</h2>
+        <label>Por que está procurando um novo imóvel? *</label>
+        <textarea name="motivoMudanca" rows="3" required></textarea>
+      </section>
+      <!-- Seção 6 -->
+      <section>
+        <h2>6. Garantias para o Contrato</h2>
+        <label>Tipo de Garantia *</label>
+        <select name="tipoGarantia" required>
+          <option value="">Selecione...</option>
+          <option value="Fiador">Fiador</option>
+          <option value="Seguro-Fiança">Seguro-Fiança</option>
+          <option value="Caução">Caução</option>
+          <option value="Outro">Outro</option>
+        </select>
+        <label>Detalhes da Garantia</label>
+        <textarea name="detalhesGarantia" rows="2" placeholder="Se fiador, informar se possui imóvel próprio e renda. Se seguro-fiança, qual seguradora pretende usar."></textarea>
+      </section>
+      <!-- Seção 7 -->
+      <section>
+        <h2>7. Tempo Desejado de Permanência</h2>
+        <label>Por quanto tempo pretende locar? *</label>
+        <input type="text" name="tempoPermanencia" placeholder="Ex: 12 meses (mínimo) até 24 meses" required>
+      </section>
+      <!-- Seção 8 -->
+      <section>
+        <h2>8. Situações Específicas</h2>
+        <label>Possui veículo?</label>
+        <select name="temVeiculo">
+          <option value="">Selecione...</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label>Quantos veículos?</label>
+        <input type="text" name="quantosVeiculos">
+        <label>Realiza atividades profissionais em casa?</label>
+        <input type="text" name="trabalhaEmCasa" placeholder="Ex: Home office, atendimentos, etc.">
+        <label>Necessita de alguma adaptação no imóvel?</label>
+        <select name="necessitaAdaptacao">
+          <option value="">Selecione...</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+        <label>Detalhes da Adaptação</label>
+        <textarea name="detalhesAdaptacao" rows="2"></textarea>
+      </section>
+      <button type="button" onclick="generatePDF()">📄 Gerar PDF do Formulário</button>
+      <div class="rodape">
+        * Campos obrigatórios. Todas as informações serão tratadas com confidencialidade.
+      </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
